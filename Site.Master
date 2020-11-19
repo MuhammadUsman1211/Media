@@ -62,7 +62,12 @@
             </div>
         </div>
         <div>
-
+            Region:
+            <label id="lblregion"></label>
+        </div>
+        <div>
+            New Cases:
+            <label id="lblcases"></label>
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -75,4 +80,55 @@
 
     </form>
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function ($) {
+        WriteLogFile();
+    });
+    function WriteLogFile() {
+        var today = new Date();
+        var dd = String(today.getDate() - 1).padStart(2, '0');
+        var dd1 = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        yesterday = yyyy + '-' + mm + '-' + dd ;
+        today = yyyy + '-' + mm + '-' + dd1;
+
+        $.ajax({
+            type: "GET",
+            url: 'https://api.covid19api.com/country/canada?from=' + yesterday + 'T00:00:00Z&to=' + today+'T00:00:00Z',
+            dataType: 'json',
+            async: false,
+            beforeSend: function () {
+            },
+            complete: function (e) {
+            },
+            success: function (data) {
+                //const { res: { Confirmed, Active, Province, Deaths } } = data;
+                const res = data;
+                var html = '';
+                var cases = '';
+
+                res.forEach(function (item) {
+                    if (item.Province != "") {
+                        html += item.Province + ' | ';
+                        cases += item.Confirmed + ' | ';
+                    }
+                    //etc
+                });
+
+                console.log(html);
+                $("#lblregion").html(html);
+                $("#lblcases").html(cases);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+                res = false;
+
+            }
+        });
+
+    }
+</script>
 </html>
