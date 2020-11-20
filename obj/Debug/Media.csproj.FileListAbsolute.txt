@@ -72,3 +72,5 @@ D:\Softbox\Media\obj\Debug\Media.csproj.CoreCompileInputs.cache
 D:\Softbox\Media\obj\Debug\Media.csproj.CopyComplete
 D:\Softbox\Media\obj\Debug\Media.dll
 D:\Softbox\Media\obj\Debug\Media.pdb
+D:\Softbox\Media\bin\System.ServiceModel.Syndication.dll
+D:\Softbox\Media\bin\System.ServiceModel.Syndication.xml
