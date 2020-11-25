@@ -14,81 +14,16 @@ using Media.App_Code;
 
 namespace Media
 {
-    public partial class _Default : Page
+    public partial class Foods : System.Web.UI.Page
     {
         Category objcat;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                getrss();
+                objcat = new Category();
+                objcat.IncrementPageCount(7);
                 getbusinessrss();
-
-                objcat = new Category();
-                objcat.IncrementPageCount(1);
-            }
-        }
-
-        public void getrss()
-        {
-            try
-            {
-                objcat = new Category();
-                DataTable dt = new DataTable();
-                dt = objcat.getPageRss(1);                 
-                List<RSS> feedList = new List<RSS>();
-                string[] RssFeedUrl = dt.Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray();
-                foreach (var items in RssFeedUrl)
-                {
-                    using (var reader = XmlReader.Create(items))
-                    {
-                        var feeds = SyndicationFeed.Load(reader);
-
-                        var serializer = new XmlSerializer(typeof(MediaGroup));
-                        string link1 = "";
-                        foreach (SyndicationItem item in feeds.Items)
-                        {
-                            string subject = item.Title.Text;
-                            string link = item.Id;
-                            string Desc = item.Summary == null ? "" : item.Summary.Text;
-                            DateTime pubdate = item.PublishDate.DateTime;
-
-
-                            var mediaGroup = item.ElementExtensions
-                                .ReadElementExtensions<MediaGroup>("group", "http://search.yahoo.com/mrss/", serializer)
-                                .FirstOrDefault();
-                            if (mediaGroup != null)
-                            {
-                                for (int a = 0; a < mediaGroup.Items.Count(); a++)
-                                {
-                                    if (a == 1)
-                                        link1 = mediaGroup.Items[a].Url;
-                                }
-                            }
-                            RSS f = new RSS
-                            {
-                                Title = subject,
-                                Link = link,
-                                PublishDate = pubdate,
-                                Description = Desc,
-                                image1 = link1
-                            };
-                            feedList.Add(f);
-
-                        }
-                    }
-                }
-
-                if (feedList.Count > 0)
-                {
-                    feedList = feedList.OrderByDescending(x => x.PublishDate).ToList();
-                }
-                newsrss.DataSource = feedList;
-                newsrss.DataBind();
-            }
-            catch (Exception ex)
-            {
-                throw;
             }
         }
 
@@ -98,7 +33,7 @@ namespace Media
             {
                 objcat = new Category();
                 DataTable dt = new DataTable();
-                dt = objcat.getPageRss(3);
+                dt = objcat.getPageRss(7);
                 List<RSS> feedList = new List<RSS>();
                 string[] RssFeedUrl = dt.Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray();
                 foreach (var items in RssFeedUrl)
@@ -141,10 +76,12 @@ namespace Media
                         }
                     }
                 }
+
                 if (feedList.Count > 0)
                 {
                     feedList = feedList.OrderByDescending(x => x.PublishDate).ToList();
                 }
+
                 sportrss.DataSource = feedList;
                 sportrss.DataBind();
             }

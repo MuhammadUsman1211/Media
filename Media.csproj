@@ -125,8 +125,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="Contact.aspx" />
+    <Content Include="Admin\AddRss.aspx" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\PageList.aspx" />
+    <Content Include="Business.aspx" />
+    <Content Include="Covid.aspx" />
+    <Content Include="Entertainment.aspx" />
+    <Content Include="Foods.aspx" />
+    <Content Include="Health.aspx" />
+    <Content Include="image\top-head-1.jpg" />
+    <Content Include="Sports.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -174,27 +182,78 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Video.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Admin\AddRss.aspx.cs">
+      <DependentUpon>AddRss.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Admin\AddRss.aspx.designer.cs">
+      <DependentUpon>AddRss.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PageList.aspx.cs">
+      <DependentUpon>PageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PageList.aspx.designer.cs">
+      <DependentUpon>PageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Category.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Business.aspx.cs">
+      <DependentUpon>Business.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business.aspx.designer.cs">
+      <DependentUpon>Business.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="Covid.aspx.cs">
+      <DependentUpon>Covid.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="Covid.aspx.designer.cs">
+      <DependentUpon>Covid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entertainment.aspx.cs">
+      <DependentUpon>Entertainment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entertainment.aspx.designer.cs">
+      <DependentUpon>Entertainment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Foods.aspx.cs">
+      <DependentUpon>Foods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Foods.aspx.designer.cs">
+      <DependentUpon>Foods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Health.aspx.cs">
+      <DependentUpon>Health.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Health.aspx.designer.cs">
+      <DependentUpon>Health.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sports.aspx.cs">
+      <DependentUpon>Sports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sports.aspx.designer.cs">
+      <DependentUpon>Sports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -221,6 +280,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Video.aspx.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Video.aspx.designer.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

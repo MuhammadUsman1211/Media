@@ -10,16 +10,7 @@
 namespace Media {
     
     
-    public partial class _Default {
-        
-        /// <summary>
-        /// newsrss control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater newsrss;
+    public partial class About {
         
         /// <summary>
         /// sportrss control.

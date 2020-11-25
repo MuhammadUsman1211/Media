@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - CYPRESS EXCHANGE MEDIA</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -14,6 +14,44 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+    <style>
+
+        .bg-black {
+            background:black;
+            color:#fff;
+        }
+            .bg-black .table-covid {
+                width:100%;
+                padding-top:10px;
+                padding-bottom:10px;
+            }
+            .bg-black .table-covid td{ text-align:center; vertical-align:middle; color:#fff; border-left:2px solid #fff; padding:5px;
+            }
+                .bg-black .table-covid .cases { color:red;
+                }
+            .bg-red {
+			background:red;
+			color:#fff;
+			text-align:center;
+	    }
+	    .bg-red h2{
+			font-weight:bold;
+			margin-top:10px;
+	    }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color:#fff;
+            font-size:18px;
+        }
+
+    </style>
+
+
+    <asp:ContentPlaceHolder ID="CSSContent" runat="server">
+
+    </asp:ContentPlaceHolder>
 
 </head>
 <body>
@@ -38,7 +76,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -51,84 +89,103 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">News</a></li>
-                        <li><a runat="server" href="~/Contact">Covid-19 Updates</a></li>
-                        <li><a runat="server" href="~/About">Business</a></li>
-                        <li><a runat="server" href="~/Contact">Sports</a></li>
-                        <li><a runat="server" href="~/Contact">Health</a></li>
-                        <li><a runat="server" href="~/Contact">Food</a></li>
-                        <li><a runat="server" href="~/Contact">Video</a></li>
+                        <li><a runat="server" href="~/Covid">Covid-19 Updates</a></li>
+                        <li><a runat="server" href="~/Business">Business</a></li>
+                        <li><a runat="server" href="~/Sports">Sports</a></li>
+                        <li><a runat="server" href="~/Entertainment">Entertainment</a></li>
+                        <li><a runat="server" href="~/Health">Health</a></li>
+                        <li><a runat="server" href="~/Foods">Food</a></li>
+                        <li><a runat="server" href="~/Video">Video</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div>
-            Region:
-            <label id="lblregion"></label>
+            <div class="container-fluid">
+                <div class="row">
+		<img src="image/top-head-1.jpg" style="width:100%;" alt="ïmg" />
+		</div>
+
+
+                <div class="row bg-red">
+		<div class="col-sm-12">
+			<h2>>>> COVID-19 UPDATES <<<</h2>
+		</div>
+		</div>
+
+
+                <div class="row bg-black">
+                    <div class="col-sm-12 covidtable">
+                        
+                    </div>
+                </div>
+                </div>
         </div>
-        <div>
-            New Cases:
-            <label id="lblcases"></label>
-        </div>
-        <div class="container body-content">
+        <div class="container-fluid">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - CYPRESS EXCHANGE MEDIA</p>
             </footer>
         </div>
 
     </form>
-</body>
 
-<script type="text/javascript">
-    $(document).ready(function ($) {
-        WriteLogFile();
-    });
-    function WriteLogFile() {
-        var today = new Date();
-        var dd = String(today.getDate() - 1).padStart(2, '0');
-        var dd1 = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var yyyy = today.getFullYear();
 
-        yesterday = yyyy + '-' + mm + '-' + dd ;
-        today = yyyy + '-' + mm + '-' + dd1;
-
-        $.ajax({
-            type: "GET",
-            url: 'https://api.covid19api.com/country/canada?from=' + yesterday + 'T00:00:00Z&to=' + today+'T00:00:00Z',
-            dataType: 'json',
-            async: false,
-            beforeSend: function () {
-            },
-            complete: function (e) {
-            },
-            success: function (data) {
-                //const { res: { Confirmed, Active, Province, Deaths } } = data;
-                const res = data;
-                var html = '';
-                var cases = '';
-
-                res.forEach(function (item) {
-                    if (item.Province != "") {
-                        html += item.Province + ' | ';
-                        cases += item.Confirmed + ' | ';
-                    }
-                    //etc
-                });
-
-                console.log(html);
-                $("#lblregion").html(html);
-                $("#lblcases").html(cases);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(errorThrown);
-                res = false;
-
-            }
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            WriteLogFile();
         });
+        function WriteLogFile() {
+            var today = new Date();
+            var dd = String(today.getDate() - 1).padStart(2, '0');
+            var dd1 = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
 
-    }
-</script>
+            yesterday = yyyy + '-' + mm + '-' + dd;
+            todaydate = yyyy + '-' + mm + '-' + dd1;
+            var urlpost = 'https://api.covid19api.com/country/canada?from=' + yesterday + 'T00:00:00Z&to=' + todaydate + 'T00:00:00Z';
+            $.ajax({
+                type: "GET",
+                url: 'https://api.covid19api.com/country/canada?from=' + yesterday + 'T00:00:00Z&to=' + todaydate + 'T00:00:00Z',
+                dataType: 'json',
+                async: false,
+                beforeSend: function () {
+                },
+                complete: function (e) {
+                },
+                success: function (data) {
+                    //const { res: { Confirmed, Active, Province, Deaths } } = data;
+                    const res = data;
+                    var html = '<tr><th>Region</th>';
+                    var cases = '<tr><th>New Cases</th>';
+
+                    res.forEach(function (item) {
+                        if (item.Province != "") {
+                            html += '<td>' + item.Province + '</td>';
+                            cases += '<td class="cases">' + item.Confirmed + '</td>';
+                        }
+                        //etc
+                    });
+
+                    html += '</tr>';
+                    cases += '</tr>';
+                    var finalhtml = "<table class=\"table-covid\">" + html + cases + "</table>";
+                    $(".covidtable").html(finalhtml);                    
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                    res = false;
+
+                }
+            });
+
+        }
+    </script>
+
+    <asp:ContentPlaceHolder ID="JSContent" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
 </html>

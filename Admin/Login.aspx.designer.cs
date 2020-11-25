@@ -7,36 +7,56 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Media {
-    
-    
-    public partial class SiteMaster {
-        
+namespace Media.Admin
+{
+
+
+    public partial class Login
+    {
+
         /// <summary>
-        /// CSSContent control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder CSSContent;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
         /// <summary>
-        /// MainContent control.
+        /// login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlInputText login;
+
         /// <summary>
-        /// JSContent control.
+        /// password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder JSContent;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword password;
+
+        /// <summary>
+        /// btnlogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnlogin;
+
+        /// <summary>
+        /// lblerrormsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblerrormsg;
     }
 }

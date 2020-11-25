@@ -11,7 +11,7 @@ namespace Media
 {
 
 
-    public partial class About
+    public partial class Covid
     {
     }
 }

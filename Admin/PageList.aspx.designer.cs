@@ -7,27 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Media {
-    
-    
-    public partial class _Default {
-        
+namespace Media.Admin
+{
+
+
+    public partial class PageList
+    {
+
         /// <summary>
-        /// newsrss control.
+        /// rptpages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater newsrss;
-        
-        /// <summary>
-        /// sportrss control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater sportrss;
+        protected global::System.Web.UI.WebControls.Repeater rptpages;
     }
 }

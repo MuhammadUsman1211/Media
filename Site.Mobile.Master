@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+	<asp:ContentPlaceHolder runat="server" ID="CSSContent" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-        <h1>Mobile Master Page</h1>
+        <h2>CYPRESS EXCHANGE MEDIA</h2>
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <section class="content-wrapper main-content clear-fix">
             <asp:ContentPlaceHolder runat="server" ID="MainContent" />
@@ -20,4 +21,6 @@
     </div>
     </form>
 </body>
+	 <asp:ContentPlaceHolder ID="JSContent" runat="server">
+            </asp:ContentPlaceHolder>
 </html>
