@@ -17,6 +17,13 @@
             clear: both;
             display: table;
         }
+        .column img {
+            max-width:100% !important;
+        }
+        .column video, .column iframe {
+            max-width:100% !important;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -35,21 +42,21 @@
     </div>
     <div class="row">
         <div class="col-md-6">           
-            <div>
+            
                 <asp:Repeater ID="newsrss" runat="server">
                     <HeaderTemplate>
-                        <table border="0" cellpadding="0" cellspacing="5">
+                        <table border="0" class="table table-responsive">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td colspan="2">
+                            <td>
                                 <h3 style="color: #3E7CFF"><%#Eval("Title") %></h3>
                                 <%#Eval("PublishDate") %>
                             </td>
                         </tr>
                         <tr>
 
-                            <td colspan="2">
+                            <td>
 
                                 <div class="column">
                                     <asp:Image ImageUrl='<%#Eval("image1") %>' runat="server" />
@@ -57,8 +64,7 @@
                                 <div class="column">
                                     <%#Eval("Description") %>
                                     <a href='<%#Eval("Link") %>' target="_blank" style="color: red !important;">Read More...</a>
-                                </div>
-                                <hr style="border-top: 1px solid #ddd;">
+                                </div>                               
                             </td>
                         </tr>
                     </ItemTemplate>
@@ -66,24 +72,25 @@
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
+            <div class="clearfix" style="clear:both;"></div>
             </div>
-        </div>
+       
         <div class="col-md-6">           
-            <div>
+           
                 <asp:Repeater ID="sportrss" runat="server">
                     <HeaderTemplate>
-                        <table border="0" cellpadding="0" cellspacing="5">
+                        <table border="0" class="table table-responsive">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td colspan="2">
+                            <td>
                                 <h3 style="color: #3E7CFF"><%#Eval("Title") %></h3>
                                 <%#Eval("PublishDate") %>
                             </td>
                         </tr>
                         <tr>
 
-                            <td colspan="2">
+                            <td>
 
                                 <div class="column">
                                     <asp:Image ImageUrl='<%#Eval("image1") %>' runat="server" />
@@ -91,8 +98,7 @@
                                 <div class="column">
                                     <%#Eval("Description") %>
                                     <a href='<%#Eval("Link") %>' target="_blank" style="color: red !important;">Read More...</a>
-                                </div>
-                                <hr style="border-top: 1px solid #ddd;">
+                                </div>                              
                             </td>
                         </tr>
 
@@ -101,7 +107,7 @@
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
-            </div>
+           <div class="clearfix" style="clear:both;"></div>
         </div>
     </div>
 

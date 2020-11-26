@@ -17,40 +17,144 @@
 
 
     <style>
-
         .bg-black {
-            background:black;
-            color:#fff;
+            background: black;
+            color: #fff;
         }
+
             .bg-black .table-covid {
-                width:100%;
-                padding-top:10px;
-                padding-bottom:10px;
+                width: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
             }
-            .bg-black .table-covid td{ text-align:center; vertical-align:middle; color:#fff; border-left:2px solid #fff; padding:5px;
-            }
-                .bg-black .table-covid .cases { color:red;
+
+                .bg-black .table-covid td {
+                    text-align: center;
+                    vertical-align: middle;
+                    color: #fff;
+                    border-left: 2px solid #fff;
+                    padding: 5px;
                 }
-            .bg-red {
-			background:red;
-			color:#fff;
-			text-align:center;
-	    }
-	    .bg-red h2{
-			font-weight:bold;
-			margin-top:10px;
-	    }
+
+                .bg-black .table-covid .cases {
+                    color: red;
+                }
+
+        .bg-red {
+            background: red;
+            color: #fff;
+            text-align: center;
+        }
+
+            .bg-red h2 {
+                font-weight: bold;
+                margin-top: 10px;
+            }
 
         .navbar-inverse .navbar-nav > li > a {
-            color:#fff;
-            font-size:18px;
+            color: #fff;
+            font-size: 18px;
         }
 
+        .date-time-temp {
+        }
+
+            .date-time-temp .datetime-box {
+                background: #fff;
+                padding-right: 0px;
+                padding-left: 0px;
+                text-align: center;
+                border: 5px solid #000;
+                padding-bottom: 14px;
+            }
+
+                .date-time-temp .datetime-box .time-text {
+                    display: block;
+                    color: #000;
+                    font-size: 40px;
+                    letter-spacing: 5px;
+                    font-weight: 500;
+                    margin: 7px 0;
+                    line-height: 1em;
+                }
+
+                .date-time-temp .datetime-box h4 {
+                    color: #fff;
+                    background: #000;
+                    display: block;
+                    padding: 10px 5px;
+                    font-size: 25px;
+                    letter-spacing: 3px;
+                    margin: 0px;
+                    line-height: 1.2em;
+                    text-transform: uppercase;
+                }
+
+                .date-time-temp .datetime-box h3 {
+                    color: #fff;
+                    background: #000;
+                    padding: 15px;
+                    display: block;
+                    max-width: 184px;
+                    margin: 0px auto;
+                    float: none;
+                    font-size: 50px;
+                    line-height: 1em;
+                }
+
+        .left-datetimetemp {
+            background: #0e7dbc; /* Old browsers */
+            background: -moz-linear-gradient(45deg, #0e7dbc 1%, #111b34 99%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(45deg, #0e7dbc 1%,#111b34 99%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(45deg, #0e7dbc 1%,#111b34 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e7dbc', endColorstr='#111b34',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        }
+
+            .left-datetimetemp .table {
+                border: none;
+                outline: none;
+            }
+
+                .left-datetimetemp .table td {
+                    text-align: center;
+                    vertical-align: top;
+                    border: none;
+                    outline: none;
+                }
+
+                .left-datetimetemp .table .day-top {
+                    color: #fff;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: 18px;
+                    display: block;
+                    margin-bottom: 10px;
+                }
+
+                .left-datetimetemp .table .temprature-1 {
+                    color: #fff;
+                    font-weight: bold;
+                    font-size: 26px;
+                    display: block;
+                    margin-top: 5px;
+                }
+
+        .right-datetimetemp {
+            background: #1f487c;
+        }
+
+            .right-datetimetemp h2 {
+                font-size: 60px;
+                line-height: 1.3em;
+                text-transform: uppercase;
+                text-align: center;
+                color: #f5f804;
+                padding: 11px 0;
+            }
     </style>
 
 
     <asp:ContentPlaceHolder ID="CSSContent" runat="server">
-
     </asp:ContentPlaceHolder>
 
 </head>
@@ -102,26 +206,72 @@
         </div>
         <div>
             <div class="container-fluid">
-                <div class="row">
-		<img src="image/top-head-1.jpg" style="width:100%;" alt="ïmg" />
-		</div>
+                <div class="row date-time-temp">
+                    <div class="col-md-5 left-datetimetemp">
+                        <table class="table table-responsive">
+                            <tr>
+                                <td>
+                                    <span class="day-top">Sat</span>
+                                    <img src="image/sun-day.png" alt="image-day">
+                                    <span class="temprature-1">20</span>
+                                </td>
+                                <td>
+                                    <span class="day-top">Sun</span>
+                                    <img src="image/sun-day.png" alt="image-day">
+                                    <span class="temprature-1">20</span>
+                                </td>
+                                <td>
+                                    <span class="day-top">Mon</span>
+                                    <img src="image/sun-day.png" alt="image-day">
+                                    <span class="temprature-1">20</span>
+                                </td>
+                                <td>
+                                    <span class="day-top">Tue</span>
+                                    <img src="image/sun-day.png" alt="image-day">
+                                    <span class="temprature-1">20</span>
+                                </td>
+                                <td>
+                                    <span class="day-top">Wed</span>
+                                    <img src="image/sun-day.png" alt="image-day">
+                                    <span class="temprature-1">20</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-2 datetime-box">
+                        <h4>
+                            <asp:Label ID="date" runat="server"></asp:Label>
+                        </h4>                       
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick">
+                                </asp:Timer>
+                                <span class="time-text">
+                                    <asp:Label ID="lbltime" runat="server" ClientIDMode="Static"></asp:Label></span>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                        <h3>21<span>&#8451;</span></h3>
+                    </div>
+                    <div class="col-md-5 right-datetimetemp">
+                        <h2>CYPRESS EXCHANGE MEDIA</h2>
+                    </div>
+                </div>
 
 
                 <div class="row bg-red">
-		<div class="col-sm-12">
-			<h2>>>> COVID-19 UPDATES <<<</h2>
-		</div>
-		</div>
+                    <div class="col-sm-12">
+                        <h2>>>> COVID-19 UPDATES <<<</h2>
+                    </div>
+                </div>
 
 
                 <div class="row bg-black">
                     <div class="col-sm-12 covidtable">
-                        
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
-        <div class="container-fluid">
+        <div class="container">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
@@ -133,6 +283,10 @@
     </form>
 
 
+
+
+    <asp:ContentPlaceHolder ID="JSContent" runat="server">
+    </asp:ContentPlaceHolder>
     <script type="text/javascript">
         $(document).ready(function ($) {
             WriteLogFile();
@@ -173,7 +327,7 @@
                     html += '</tr>';
                     cases += '</tr>';
                     var finalhtml = "<table class=\"table-covid\">" + html + cases + "</table>";
-                    $(".covidtable").html(finalhtml);                    
+                    $(".covidtable").html(finalhtml);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(errorThrown);
@@ -184,8 +338,5 @@
 
         }
     </script>
-
-    <asp:ContentPlaceHolder ID="JSContent" runat="server">
-    </asp:ContentPlaceHolder>
 </body>
 </html>
